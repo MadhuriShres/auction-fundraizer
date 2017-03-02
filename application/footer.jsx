@@ -1,15 +1,17 @@
+
 import React from 'react';
 import { render } from 'react-dom';
 
-class Home extends React.Component {
+
+class footer extends React.Component {
   render() {
    
     return (
       <div>
-        Hello
+       footer
       </div>
     );
   }
 }
 
-export default Home;
+export default footer;
