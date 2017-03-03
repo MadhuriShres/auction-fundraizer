@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import Header from './Header.jsx';
 import Container from './container.jsx';
 import Footer from './footer.jsx';
-import test from './skylight.jsx';
+
 
 class Home extends React.Component {
   render() {
@@ -14,7 +14,6 @@ class Home extends React.Component {
           <div className="wrapper">
               
             <div>  <Header /> </div>
-              <div> <test /> </div>
             <div> <Container /> </div> 
             <div> <Footer /> </div>
          
