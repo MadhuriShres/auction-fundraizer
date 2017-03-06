@@ -12,12 +12,14 @@ class container extends React.Component {
 }
   handleclick(evt) {
       document.getElementById("emailaddresshidden").className = 'emailaddressshow '
-      // this.setState({emailaddress:evt.target.value})
-     
     };
 
     handlechange(evt) {
       this.setState({emailaddress:evt.target.value});
+    
+    }
+    handlebuttonclick(evt) {
+     
     }
   render() {
      var myBigGreenDialog = {
@@ -34,18 +36,17 @@ class container extends React.Component {
                 
                 <article id="article2">
                     <h2>Sweet AJAX Tabs</h2>
-                    
                     <div className="line"></div>
-                    
                     <div className="articleBody clear">
-                       
-                          <div className ="box"
-                           onClick={() => this.refs.customDialog.show()}>
-                         
-                            <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" />
-                         <div className="bidrate">Bidding rate Rs 29</div>
-                             <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog" title="A Custom Modal" className="skylightimg">
-                              <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" />
+                      <div className ="box">
+                         <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" 
+                               onClick={() => this.refs.customDialog.show()}/>
+                           <div className="bidrate">Bidding rate Rs 29</div>
+                             <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
+                                <div>  <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg"  className ="skylightimage"/></div>
+                                <div className="popuptext"> 
+                                    Description : this is a beautiful flower, it is red in color.this is a beautiful flower, it is red in color
+                                </div>
                                   <div className="skylightcontent"> Bidding rate Rs 29 <br/>
                                     <button className="wannabuy"
                                       onClick={(evt) => this.handleclick(evt)}>
@@ -57,14 +58,13 @@ class container extends React.Component {
                                           placeholder="Email"
                                           value= {this.state.emailaddress}
                                           onChange={(evt) =>this.handlechange(evt)}
-                                       
                                         /> 
+                                        <button
+                                            onClick={(evt) => this.handlebuttonclick(evt)}>
+                                        Buy</button>
                                       </div>
                                   </div>
-                                    
-                                 
-                             
-                             
+                              
                          </SkyLight>
                         
                           </div>
@@ -75,29 +75,8 @@ class container extends React.Component {
                           <div className ="box">test</div>
                          <div className ="box">test</div>
                           <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div> <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                           <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div> <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
+                       
+                  
                       
                     </div>
                         <div className="linebotton"></div>
