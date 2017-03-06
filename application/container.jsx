@@ -10,11 +10,15 @@ class container extends React.Component {
         emailaddress:''
       };
 }
-  handlechange(evt) {
-      document.getElementById("buyemail").className = 'emailaddressshow '
+  handleclick(evt) {
+      document.getElementById("emailaddresshidden").className = 'emailaddressshow '
       // this.setState({emailaddress:evt.target.value})
      
     };
+
+    handlechange(evt) {
+      this.setState({emailaddress:evt.target.value});
+    }
   render() {
      var myBigGreenDialog = {
       backgroundColor: '#355664',
@@ -43,13 +47,17 @@ class container extends React.Component {
                              <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog" title="A Custom Modal" className="skylightimg">
                               <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" />
                                   <div className="skylightcontent"> Bidding rate Rs 29 <br/>
-                                    <button className="wannabuy">Wanna Buy ?</button>
+                                    <button className="wannabuy"
+                                      onClick={(evt) => this.handleclick(evt)}>
+                                      Wanna Buy ?
+                                    </button><br/>
                                      <div id="emailaddresshidden"  className="emailaddresshidden"> 
                                           <input
                                           type ="text"
                                           placeholder="Email"
                                           value= {this.state.emailaddress}
-                                         onClick={(evt) => this.handlechange(evt)}
+                                          onChange={(evt) =>this.handlechange(evt)}
+                                       
                                         /> 
                                       </div>
                                   </div>
