@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import SkyLight from 'react-skylight';
-
+import  ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class container extends React.Component {
    constructor(props){
@@ -11,14 +11,18 @@ class container extends React.Component {
       };
 }
   handleclick(evt) {
-      document.getElementById("emailaddresshidden").className = 'emailaddressshow '
+    document.getElementById("buyid").className = 'buybuttonhide'
+    document.getElementById("emailaddresshidden").className = 'emailaddressshow '
     };
 
     handlechange(evt) {
       this.setState({emailaddress:evt.target.value});
-    
+      console.log(this.state.emailaddress);
     }
     handlebuttonclick(evt) {
+      if(this.state.emailaddress ==='') {
+
+      }
      
     }
   render() {
@@ -42,27 +46,37 @@ class container extends React.Component {
                          <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" 
                                onClick={() => this.refs.customDialog.show()}/>
                            <div className="bidrate">Bidding rate Rs 29</div>
+                                  
                              <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
                                 <div>  <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg"  className ="skylightimage"/></div>
                                 <div className="popuptext"> 
                                     Description : this is a beautiful flower, it is red in color.this is a beautiful flower, it is red in color
                                 </div>
                                   <div className="skylightcontent"> Bidding rate Rs 29 <br/>
-                                    <button className="wannabuy"
+                                    <button className="wannabuy" id = "buyid"
                                       onClick={(evt) => this.handleclick(evt)}>
-                                      Wanna Buy ?
+                                     Reserve
                                     </button><br/>
-                                     <div id="emailaddresshidden"  className="emailaddresshidden"> 
+                                   
+                                <div id="emailaddresshidden"  className="emailaddresshidden"> 
+                                    <input 
+                                          type="text"
+                                          placeholder="your rate"
+                                        />
                                           <input
                                           type ="text"
-                                          placeholder="Email"
+                                          placeholder="CloudFactory email"
                                           value= {this.state.emailaddress}
                                           onChange={(evt) =>this.handlechange(evt)}
+                                        
                                         /> 
-                                        <button
+                                      
+                                        <button className= "buttonbuy"
                                             onClick={(evt) => this.handlebuttonclick(evt)}>
-                                        Buy</button>
+                                        Reserve</button>
                                       </div>
+                               
+                                   
                                   </div>
                               
                          </SkyLight>

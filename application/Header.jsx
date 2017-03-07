@@ -15,6 +15,17 @@ class Header extends React.Component {
                 <hgroup>
                     <h1>FundRaiser</h1>
                 </hgroup>
+                 <div 
+                    className="search">
+                      <input 
+                        id="search-text"
+                        type="text" 
+                        placeholder="search" />
+                      <button 
+                        id="search-button">SEARCH
+                      </button>
+                 </div>
+               
                      <nav className="clear">
                              <Link to={'/'}>  <button className="header"> Home</button> </Link>
                              <Link to={'/Clothes'}>  <button className="header"> Clothes</button> </Link>

@@ -70,7 +70,7 @@ p{
     background-color:#24404c;
     border-bottom:1px solid #416371;
     margin:6em 0;
-    overflow:hidden;
+  
 }
 
 article .line{
@@ -223,8 +223,15 @@ img {
 }
 
 .wannabuy {
-    background-color: grey;
-    margin-left: 26px;
+   background-color: #355664;
+    margin-left: 42px;
+    font-size: 26px;
+    /* border: 1px; */
+    border-bottom: 1px;
+    border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-bottom-style: initial;
 }
 
 .emailaddresshidden{
@@ -234,7 +241,7 @@ img {
 .emailaddressshow {
     display: block;
     margin-top: 12px;
-     color: black;
+     color: #253c46;;
 }
 .closeButtonStyle{
    cursor: pointer;
@@ -271,3 +278,76 @@ img {
       color: red;
       font-size: 100px;
   }
+
+  /*
+  css animation textbox
+  */
+  .example-enter {
+   opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+   opacity: 1;
+   transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+   opacity: 1;
+}
+
+.example-leave.example-leave-active {
+   opacity: 0.01;
+   transition: opacity 500ms ease-in;
+}
+
+/*
+Search icon
+*/
+
+#search-text {
+ left: 300px;
+    position: relative;
+    width: 172px;
+    height: 21px;
+    margin: 3px 4px;
+    background-color: #355664;
+    font-family: cursive;
+    font-size: 20px;
+}
+#search-text:focus {
+  left: 0px;    
+}
+.search:hover #search-text {
+  left:0;
+  position:relative;
+}
+.search {
+  background: #355664;
+  padding: 10px;
+  overflow:hidden;
+  float: right;
+  margin-top: 41px
+}
+#search-button {
+    color: white;
+    font-size: 16px;
+    background-color: #355664;
+    font-family: cursive;
+    width: 98px;
+
+}
+
+/* hide wanna buy button*/
+.buybuttonhide {
+    display: none;
+}
+.buttonbuy {
+    color: white;
+    background-color: #355664;
+    margin-left: 109px;
+    margin-top: 10px;
+    width: 93px;
+    font-size: 23px;
+}
+
+    
