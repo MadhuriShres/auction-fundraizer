@@ -1,0 +1,455 @@
+
+
+*{
+    /* Universal reset: */
+    margin:0;
+    padding:0;
+}
+
+header,footer,
+article,section,
+hgroup,nav,
+figure{
+    /* Giving a display value to the HTML5 rendered elements: */
+    display:block;
+}
+
+body{
+    /* Setting the default text color, size, page background and a font stack: */
+    font-size:0.825em;
+    color:#fcfcfc;
+    background-color:#355664;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+a img{
+    border:none;
+}
+
+/* Headings: */
+
+h1,h2,h3{
+    font-family:"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+    text-shadow:0 1px 1px black;
+        font-family: cursive;
+}
+
+h1{
+  
+    font-size:3.5em;
+    padding:0.5em 0 0;
+    text-transform:uppercase;
+        font-family: cursive;
+}
+
+h3{
+    /* The slogan text */
+    font-family:forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+    font-size:2em;
+    font-weight:normal;
+    margin:0 0 1em;
+}
+
+
+h2{
+    font-size:2.2em;
+    font-weight:normal;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+}
+
+p{
+    line-height:1.5em;
+    padding-bottom:1em;
+}
+
+.line{
+    /* The dividing line: */
+    height:1px;
+    background-color:#24404c;
+    border-bottom:1px solid #416371;
+    margin:6em 0;
+  
+}
+
+article .line{
+    /* The dividing line inside of the article is darker: */
+    background-color:#15242a;
+    border-bottom-color:#204656;
+    margin:1.3em 0;
+}
+
+article.linebotton {
+     background-color:#15242a;
+    border-bottom-color:#204656; 
+     margin:3em 0;
+}
+
+footer .line{
+    margin:2em 0;
+}
+
+nav{
+  
+    padding:0 5px;
+    position:absolute;
+    right:0;
+    top:6em;
+   -moz-box-shadow:0 1px 1px #333333;
+    -webkit-box-shadow:0 1px 1px #333333;
+    box-shadow:0 1px 1px #333333;
+}
+
+.clear:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#page{
+    width:960px;
+    margin:0 auto;
+    position:relative;
+    width: 100%;
+}
+
+article{
+    background-color:white;
+       margin: 7em 248px;
+    padding:20px;
+    text-shadow:0 2px 0 black;
+        width: 87%;
+        height:100%;
+
+
+}
+
+
+
+
+
+
+/* Footer styling: */
+
+footer{
+    margin-bottom:30px;
+    text-align:center;
+    font-size:0.825em;
+}
+
+
+footer p{
+    margin-bottom:-2.5em;
+    position:relative;
+}
+
+footer a,footer a:visited{
+    color:#cccccc;
+    background-color:#213e4a;
+    display:block;
+    padding:2px 4px;
+    z-index:100;
+    position:relative;
+}
+
+footer a:hover{
+    text-decoration:none;
+    background-color:#142830;
+}
+
+footer a.by{
+    float:left;
+
+}
+
+footer a.up{
+    float:right;
+}
+
+/* Box */
+
+.box {
+    width:222px;
+    height: 256px;
+    background-color: 213E4A;
+    display: block;
+    float: left;
+    margin-left: 25px;
+    margin-top: 40px;
+
+}
+
+img {
+     width: 220px;
+    height: 229px;
+}
+
+.linebotton {
+    height:1px;
+    background-color:#15242a;
+    border-bottom:1px solid #416371;
+    margin:6em 0;
+    overflow:hidden;
+
+}
+.bidrate{
+        font-family: cursive;
+        font-size: initial;
+        margin-left: 38px;
+
+}
+.footertext {
+
+    font-family: cursive;
+    text-align: center;
+    font-size:2.2em;
+        margin-top: -40px;
+
+       
+}
+
+.skylightcontent {
+    
+    float: right;
+    font-weight: bolder;
+    font-size: 32px;
+    font-family: cursive;
+      margin-top: -340px;
+    margin-right: 141px;
+    width:  306px;
+}
+
+.skylightimg img {
+    width: 100px;
+    float: right;
+    
+}
+
+.wannabuy {
+   background-color: #355664;
+    margin-left: 42px;
+    font-size: 26px;
+    /* border: 1px; */
+    border-bottom: 1px;
+    border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-bottom-style: initial;
+}
+
+.emailaddresshidden{
+    display: none;
+}
+
+.emailaddressshow {
+    display: block;
+    margin-top: 12px;
+     color: #253c46;;
+}
+.closeButtonStyle{
+   cursor: pointer;
+    position: absolute; 
+    font-size: 1.8em; 
+    right: 10px; 
+    top: 0px;
+  }
+  .skylightimage{
+    width: 42%;
+    height: 80%;
+
+  }
+
+  .popuptext {
+       width: 31%;
+    margin-left: 82px;
+    margin-top: 23px;
+    font-size: 16px;
+    overflow: hidden;
+    font-family: cursive;
+  }
+  .header{
+  font-size: 17px;
+    font-family: cursive;
+    color: white;
+    background-color: #597e8e;
+    border-bottom-width: inherit;
+    width: 250px;
+    padding-bottom: 53px;
+    text-align: center;
+    padding-top: 34px;
+    margin-right: -5px;
+  }
+
+  .test {
+      color: red;
+      font-size: 100px;
+  }
+
+  /*
+  css animation textbox
+  */
+  .example-enter {
+   opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+   opacity: 1;
+   transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+   opacity: 1;
+}
+
+.example-leave.example-leave-active {
+   opacity: 0.01;
+   transition: opacity 500ms ease-in;
+}
+
+/*
+Search icon
+*/
+
+#search-text {
+     font-family: cursive;
+    /* text-align: center; */
+    font-size: 2.2em;
+    /* margin-top: -79px; */
+}
+#search-text:focus {
+  left: 0px;    
+}
+.search:hover #search-text {
+  left:0;
+  position:relative;
+}
+.search {
+      padding: 10px;
+    overflow: hidden;
+    float: right;
+    margin-top: -47px;
+    margin-left: 14px;
+    margin-right: 42px;
+}
+#search-button {
+    color: white;
+    font-size: 16px;
+    background-color: #597e8e;
+    font-family: cursive;
+       width: 55px;
+  
+
+}
+
+/* hide wanna buy button*/
+.buybuttonhide {
+    display: none;
+}
+.buttonbuy {
+    color: white;
+    background-color: #355664;
+    margin-left: 109px;
+    margin-top: 10px;
+    width: 93px;
+    font-size: 23px;
+}
+
+.icon {
+        width: 96px;
+    font-size: 28px;
+    margin-top: -16px;
+    float: right;
+    padding-left: 3px;
+    
+}
+
+.icon img {
+       width: 46px;
+    height: 30px
+} 
+.searchicon{
+      width: 57px;
+    height: 28px;
+    padding: 5px;
+    margin-top: -4px;
+}
+
+.hidevalidation{
+    display: none;
+}
+
+.showvalidation {
+        color: red;
+    margin-top: -179px;
+    font-size: 24px;
+}
+
+  .headerdesign{
+      background-color: 30373b;
+    height: 46px;
+}
+
+.navpanel{
+     height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+         position: fixed;
+    margin: 1px 1px;
+
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+  
+    width: 248px;
+    background-color: red;
+    float: left;
+}
+.markup{
+    background-color: black;
+        width: 100%;
+    
+    height: 44px;
+    align-content: center;
+    margin-bottom: -56px;
+
+}
+.shoplogo, .shoplogo .logotext {
+    color: #0c0f22;
+    text-decoration: none;
+}
+.shoplogo {
+    background: #a9d1d6;
+    font-family: Karla;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.4em;
+    text-align: center;
+        height: 64px
+}
+
+.question img {
+      /* display: block; */
+    
+    width: 27%;
+    padding: 12px;
+    margin-left: 113px;
+}
+img, svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.question {
+        margin: 50px;
+         
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
