@@ -11,26 +11,37 @@ class Header extends React.Component {
 
     return (
       <div>
-          <header> 
-                <hgroup>
-                    <h1>FundRaiser</h1>
-                </hgroup>
-                 <div 
+          <header>
+             <div className ="headerdesign"> </div>
+               <div 
                     className="search">
                       <input 
                         id="search-text"
                         type="text" 
                         placeholder="search" />
-                      <button 
-                        id="search-button">SEARCH
+                      <button     id="search-button">
+                     <img src="../image/search.png"  className="searchicon"/>
+                
                       </button>
                  </div>
+                <hgroup>
                
-                     <nav className="clear">
+                </hgroup>
+               <div className="navpanel"> 
+                  <div className='shoplogo'> FundRaiser </div>
+                    <nav className="clear">
                              <Link to={'/'}>  <button className="header"> Home</button> </Link>
                              <Link to={'/Clothes'}>  <button className="header"> Clothes</button> </Link>
                              <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
+                             <Link to={'/'}>  <button className="header"> Home</button> </Link>
+                             <Link to={'/Clothes'}>  <button className="header"> Clothes</button> </Link>
+                             <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
+                                                          <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
+
                         </nav>
+              </div>
+               
+                   
             </header>
        </div>
     );

@@ -7,7 +7,12 @@ class container extends React.Component {
    constructor(props){
       super(props);
       this.state=  {
-        emailaddress:''
+        emailaddress:'',
+        rate:'', 
+        error :{
+          emailerror:"Please enter valid emailaddress",
+        }
+      
       };
 }
   handleclick(evt) {
@@ -19,12 +24,32 @@ class container extends React.Component {
       this.setState({emailaddress:evt.target.value});
       console.log(this.state.emailaddress);
     }
-    handlebuttonclick(evt) {
-      if(this.state.emailaddress ==='') {
-
-      }
-     
+    handlechangerate(evt) {
+      this.setState({rate:evt.target.value});
+      console.log(this.state.rate);
     }
+
+    displayErrorMessage () {
+      document.getElementById("validation").className = 'showvalidation'
+       
+
+    }
+    handlebuttonclick(evt) {
+        const email ='this.state.emailaddress';
+      {
+      
+        } if (!this.state.emailaddress) {
+          this.displayErrorMessage();
+          return;
+        }
+        else if(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/.test(email))
+        this.setState({
+          rate : this.state.rate,
+          emailaddress: this.state.emailaddress
+        });
+        else
+        { this.displayErrorMessage() }
+      }
   render() {
      var myBigGreenDialog = {
       backgroundColor: '#355664',
@@ -36,8 +61,8 @@ class container extends React.Component {
     };
     return (
       <div>
-       <div className="line"></div>
-                
+       {/*<div className="line"></div>*/}
+                <div className="markup"> teasdfasdst </div>
                 <article id="article2">
                     <h2>Sweet AJAX Tabs</h2>
                     <div className="line"></div>
@@ -59,24 +84,30 @@ class container extends React.Component {
                                     </button><br/>
                                    
                                 <div id="emailaddresshidden"  className="emailaddresshidden"> 
+                                  
                                     <input 
                                           type="text"
                                           placeholder="your rate"
+                                          value = {this.state.rate}
+                                          onChange={(evt) =>this.handlechangerate(evt)}
                                         />
                                           <input
                                           type ="text"
                                           placeholder="CloudFactory email"
                                           value= {this.state.emailaddress}
                                           onChange={(evt) =>this.handlechange(evt)}
-                                        
                                         /> 
-                                      
-                                        <button className= "buttonbuy"
+                                      <button className= "buttonbuy"
                                             onClick={(evt) => this.handlebuttonclick(evt)}>
                                         Reserve</button>
+                                     
                                       </div>
-                               
-                                   
+                               <div id ="validation" className ="hidevalidation">
+                                  {this.state.error.emailerror}
+                                 
+
+                              </div>
+                                 
                                   </div>
                               
                          </SkyLight>
@@ -86,15 +117,21 @@ class container extends React.Component {
                          <div className ="box">test</div>
                           <div className ="box">test</div>
                          <div className ="box">test</div>
-                          <div className ="box">test</div>
-                         <div className ="box">test</div>
-                          <div className ="box">test</div>
+                         
                        
                   
                       
                     </div>
-                        <div className="linebotton"></div>
-                </article>
+                        <div className="linebotton"> </div>
+                      
+                </article> 
+                 <div className= "question">
+                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
+                                                   <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
+                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
+
+                  </div>
+                          <div className="linebotton"> </div>
       </div>
     );
   }
