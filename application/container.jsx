@@ -52,19 +52,20 @@ class container extends React.Component {
       }
   render() {
      var myBigGreenDialog = {
-      backgroundColor: '#355664',
-      color: 'white',
+      backgroundColor: 'white',
+      color: 'black',
       width: '70%',
       height: '600px',
       marginTop: '-300px',
       marginLeft: '-35%',
+      
     };
     return (
       <div>
        {/*<div className="line"></div>*/}
-                <div className="markup"> teasdfasdst </div>
+                <div className="markup"> New Arrivals Now Online & In-store </div>
                 <article id="article2">
-                    <h2>Sweet AJAX Tabs</h2>
+                    
                     <div className="line"></div>
                     <div className="articleBody clear">
                       <div className ="box">
@@ -117,21 +118,29 @@ class container extends React.Component {
                          <div className ="box">test</div>
                           <div className ="box">test</div>
                          <div className ="box">test</div>
+                           <div className ="box">test</div>
+                          <div className ="box">test</div>
+                         <div className ="box">test</div>
+                          <div className ="box">test</div>
+                          <div className ="box">test</div>
+                         <div className ="box">test</div>
+                           <div className ="box">test</div>
+                          <div className ="box">test</div>
+                       
                          
                        
                   
                       
                     </div>
-                        <div className="linebotton"> </div>
-                      
+                    
                 </article> 
                  <div className= "question">
                             <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
-                                                   <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
-                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
+                                                   <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" />
+                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" />
 
                   </div>
-                          <div className="linebotton"> </div>
+                       
       </div>
     );
   }

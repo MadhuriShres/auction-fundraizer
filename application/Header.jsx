@@ -19,10 +19,7 @@ class Header extends React.Component {
                         id="search-text"
                         type="text" 
                         placeholder="search" />
-                      <button     id="search-button">
-                     <img src="../image/search.png"  className="searchicon"/>
-                
-                      </button>
+                  
                  </div>
                 <hgroup>
                
