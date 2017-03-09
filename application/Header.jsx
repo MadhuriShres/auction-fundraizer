@@ -33,7 +33,7 @@ class Header extends React.Component {
                              <Link to={'/'}>  <button className="header"> Home</button> </Link>
                              <Link to={'/Clothes'}>  <button className="header"> Clothes</button> </Link>
                              <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
-                                                          <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
+                             <Link to={'/Accessaries'}>  <button className="header"> Accessaries</button> </Link>
 
                         </nav>
               </div>

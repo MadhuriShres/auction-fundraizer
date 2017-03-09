@@ -123,7 +123,7 @@ article{
     padding:20px;
    
         width: 87%;
-        height:100%;
+      
 
 
 }
@@ -202,6 +202,7 @@ img {
         font-family: cursive;
         font-size: initial;
         margin-left: 38px;
+        color:#30373b;
 
 }
 .footertext {
@@ -321,6 +322,7 @@ Search icon
     /* text-align: center; */
     font-size: 2.2em;
     /* margin-top: -79px; */
+    color: black;
 }
 #search-text:focus {
   left: 0px;    
@@ -371,7 +373,11 @@ Search icon
 
 .icon img {
        width: 46px;
-    height: 30px
+    height: 30px;
+        border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 } 
 .searchicon{
       width: 57px;
@@ -436,11 +442,13 @@ Search icon
 }
 
 .question img {
-      /* display: block; */
-    
-    width: 27%;
-    padding: 12px;
-    margin-left: 113px;
+     display: block;
+    float: left;
+    margin-left: 55px;
+    width: calc(27.333% - 69px);
+    height: 200px;
+        margin-top: -109px;
+
 }
 img, svg {
     max-width: 100%;
@@ -449,15 +457,16 @@ img, svg {
 }
 
 .question {
-        margin: 50px;
-         
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+    margin-left: 60px; 
+    width: 92%;
+    width: 99%;
+    height: 14%;
+    margin-top: 154px;
+    clear: both;
 }
 
 .box img {
     height: 90%;
+        cursor: hand;
 }
+

@@ -31,6 +31,7 @@ class container extends React.Component {
 
     displayErrorMessage () {
       document.getElementById("validation").className = 'showvalidation'
+      this.setState({emailaddress:''})
        
 
     }
@@ -40,6 +41,7 @@ class container extends React.Component {
       
         } if (!this.state.emailaddress) {
           this.displayErrorMessage();
+          
           return;
         }
         else if(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/.test(email))
@@ -48,7 +50,9 @@ class container extends React.Component {
           emailaddress: this.state.emailaddress
         });
         else
-        { this.displayErrorMessage() }
+        { this.displayErrorMessage()
+           
+         }
       }
   render() {
      var myBigGreenDialog = {
@@ -126,20 +130,24 @@ class container extends React.Component {
                          <div className ="box">test</div>
                            <div className ="box">test</div>
                           <div className ="box">test</div>
+                          <div className ="box">test</div>
+                         <div className ="box">test</div>
+                           <div className ="box">test</div>
+                          <div className ="box">tripti</div>
                        
                          
                        
                   
                       
                     </div>
-                    
-                </article> 
-                 <div className= "question">
+                       <div className= "question">
                             <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
-                                                   <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" />
+                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" />
                             <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" />
 
                   </div>
+                </article> 
+              
                        
       </div>
     );
