@@ -11,7 +11,8 @@ class container extends React.Component {
         rate:'', 
         error :{
           emailerror:"Please enter valid emailaddress",
-        }
+        },
+        likes:1
       
       };
 }
@@ -54,6 +55,12 @@ class container extends React.Component {
            
          }
       }
+
+      handleclicklikes(evt) {
+        let newlikes = (this.state.likes+1);
+          this.setState({likes:newlikes})
+          console.log(this.state);
+      }
   render() {
      var myBigGreenDialog = {
       backgroundColor: 'white',
@@ -69,15 +76,24 @@ class container extends React.Component {
        {/*<div className="line"></div>*/}
                 <div className="markup"> New Arrivals Now Online & In-store </div>
                 <article id="article2">
-                    
                     <div className="line"></div>
                     <div className="articleBody clear">
                       <div className ="box">
                          <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" 
                                onClick={() => this.refs.customDialog.show()}/>
                            <div className="bidrate">Bidding rate Rs 29</div>
-                                  
-                             <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
+                           <ReactCSSTransitionGroup transitionName="like" 
+                           transitionEnterTimeout={500}
+                            transitionLeaveTimeout={500}>
+                            <span key={this.state.likes} className="likes-heart">{this.state.likes}</span>
+                          </ReactCSSTransitionGroup>
+                            <button 
+                            className="likes"
+                            onClick={(evt) => this.handleclicklikes(evt)}>
+                            &hearts;
+                            {this.state.likes}
+                            </button>
+                            <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
                                 <div>  <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg"  className ="skylightimage"/></div>
                                 <div className="popuptext"> 
                                     Description : this is a beautiful flower, it is red in color.this is a beautiful flower, it is red in color
