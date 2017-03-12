@@ -74,8 +74,10 @@ class container extends React.Component {
     return (
       <div>
        {/*<div className="line"></div>*/}
-                <div className="markup"> New Arrivals Now Online & In-store </div>
-                <article id="article2">
+            <div className="markup"> 
+                <p>New Arrivals Now Online & In-store</p>
+              </div>   
+          <article id="article2">
                     <div className="line"></div>
                     <div className="articleBody clear">
                       <div className ="box">
