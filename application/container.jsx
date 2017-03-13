@@ -2,6 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import SkyLight from 'react-skylight';
 import  ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router';
+import Delivery from './delivery.jsx';
+
+import Size from './size.jsx';
+import Faq from './faq.jsx';
+
+
 
 class container extends React.Component {
    constructor(props){
@@ -11,7 +18,8 @@ class container extends React.Component {
         rate:'', 
         error :{
           emailerror:"Please enter valid emailaddress",
-        }
+        },
+        likes:1
       
       };
 }
@@ -54,6 +62,12 @@ class container extends React.Component {
            
          }
       }
+
+      handleclicklikes(evt) {
+        let newlikes = (this.state.likes+1);
+          this.setState({likes:newlikes})
+          console.log(this.state);
+      }
   render() {
      var myBigGreenDialog = {
       backgroundColor: 'white',
@@ -67,17 +81,28 @@ class container extends React.Component {
     return (
       <div>
        {/*<div className="line"></div>*/}
-                <div className="markup"> New Arrivals Now Online & In-store </div>
-                <article id="article2">
-                    
+            <div className="markup"> 
+                <p>New Arrivals Now Online & In-store</p>
+              </div>   
+          <article id="article2">
                     <div className="line"></div>
                     <div className="articleBody clear">
                       <div className ="box">
                          <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" 
                                onClick={() => this.refs.customDialog.show()}/>
                            <div className="bidrate">Bidding rate Rs 29</div>
-                                  
-                             <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
+                           <ReactCSSTransitionGroup transitionName="like" 
+                           transitionEnterTimeout={500}
+                            transitionLeaveTimeout={500}>
+                            <span key={this.state.likes} className="likes-heart">{this.state.likes}</span>
+                          </ReactCSSTransitionGroup>
+                            <button 
+                            className="likes"
+                            onClick={(evt) => this.handleclicklikes(evt)}>
+                            &hearts;
+                            {this.state.likes}
+                            </button>
+                            <SkyLight dialogStyles={myBigGreenDialog} hideOnOverlayClicked ref="customDialog"   className="skylightimg">
                                 <div>  <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg"  className ="skylightimage"/></div>
                                 <div className="popuptext"> 
                                     Description : this is a beautiful flower, it is red in color.this is a beautiful flower, it is red in color
@@ -141,9 +166,10 @@ class container extends React.Component {
                       
                     </div>
                        <div className= "question">
-                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" />
-                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" />
-                            <img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" />
+                      <Link to="/Faq"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192"  />  </Link>
+                        <Link to = "/Delivery"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" /></Link>
+                      <Link to ="/Size"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" /> </Link>
+                    
 
                   </div>
                 </article> 

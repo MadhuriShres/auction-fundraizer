@@ -173,15 +173,16 @@ footer a.up{
 /* Box */
 
 .box {
-    width:222px;
-    height: 256px;
+          width: 366px;
+    height: 350px;
     background-color: 213E4A;
     display: block;
     float: left;
     margin-left: 25px;
     margin-top: 40px;
     color: black;
-        border: 1px solid;
+    border: 1px solid;
+    background-color: #a9d1d6;
 
 }
 
@@ -199,10 +200,13 @@ img {
 
 }
 .bidrate{
-        font-family: cursive;
-        font-size: initial;
-        margin-left: 38px;
-        color:#30373b;
+font-family: cursive;
+    font-size: initial;
+    margin-left: 38px;
+    color: #30373b;
+    float: right;
+    margin-top: 10px;
+    margin-right: 12px;
 
 }
 .footertext {
@@ -419,13 +423,26 @@ Search icon
 }
 .markup{
     background-color: black;
-        width: 100%;
-    
+    width: 100%;
     height: 52px;
     margin-bottom: -56px;
-        text-align: center;
+    text-align: center;
     font-size: 21px;
+    overflow: hidden;
+}
+.markup p {
+    animation: sideleft  15s;
+}
 
+@keyframes sideleft {
+    from {
+        margin-left: 100%;
+        width:100%
+    }
+    to {
+        margin-left: 0%;
+        width: 100%
+    }
 }
 .shoplogo, .shoplogo .logotext {
     color: #0c0f22;
@@ -448,6 +465,7 @@ Search icon
     width: calc(27.333% - 69px);
     height: 200px;
         margin-top: -109px;
+            cursor: hand;
 
 }
 img, svg {
@@ -466,7 +484,79 @@ img, svg {
 }
 
 .box img {
-    height: 90%;
-        cursor: hand;
+height: 83%;
+    cursor: hand;
+    width: 366px;
 }
 
+.likes-heart{
+  background :url(http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png) center no-repeat;
+    background-size: contain;
+    font-size: 2rem;
+    /* padding: 1rem; */
+    color: blue;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    margin-top: -45px;
+    text-align: center;
+    margin-left: 89px;
+  }
+
+
+
+/*animation */
+  .likes-heart{
+  opacity: 0;
+  transition: all 0.5s; 
+      transform: translate(-50%,-50%)  scale(5);
+  display :block
+  }
+  .like-enter{
+        transition: all 2s;
+     
+    transform :translate(-50%,-50%) scale(1);
+    opacity: 1;
+  }
+ .like-enter-active{
+      transform: translate(-50%,-50%)  scale(5)}
+
+  .like-leave-active{
+    display: none}
+
+    
+
+  .likes  {
+          width: 32px;
+    height: 22px;
+    font-size: 17px;
+    margin-top: 34px;
+    margin-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 9px;
+    background-color: #a9d1d6;
+    border: 0.5 px solid;
+
+    border-color: cadetblue;
+    border-bottom: cadetblue;
+    border-left: #5f9ea0;
+    /* border-bottom-style: hidden; */
+    /* border-bottom-width: inherit; */
+    border-top: #5f9ea0;
+    border-right: #5f9ea0;
+  }
+
+  .body {
+            width: 100%;
+    height: 350px;
+    background-color: 213E4A;
+    display: block;
+    float: left;
+    margin-left: 25px;
+    margin-top: 40px;
+    color: black;
+  
+    background-color:white;
+    font-size: 20px;
+
+  }
