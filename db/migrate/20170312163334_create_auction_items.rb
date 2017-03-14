@@ -5,7 +5,7 @@ class CreateAuctionItems < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :description
       t.integer :price
-      t.boolean :sold
+      t.boolean :sold, default: false
       t.string :sold_to
       t.string :category
 
