@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'home#index'
-  resources :auction_items, only: [:index, :show, :update]
+  resources :auction_items, only: [:index, :show, :update] do
+    put :like
+  end
 
   match '/clothes', to: 'home#index', via: :get
   match '/accessories', to: 'home#index', via: :get
