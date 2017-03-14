@@ -18,7 +18,7 @@ body{
     /* Setting the default text color, size, page background and a font stack: */
     font-size:0.825em;
     color:#fcfcfc;
-    background-color:white;
+    background-color:#355664;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -92,7 +92,7 @@ footer .line{
 
 nav{
   
-  
+    padding:0 5px;
     position:absolute;
     right:0;
     top:6em;
@@ -210,21 +210,13 @@ font-family: cursive;
 
 }
 .footertext {
-       font-family: cursive;
+
+    font-family: cursive;
     text-align: center;
-    font-size: 1.2em;
-    background-color: black;
-    width: calc(89.333% - 94px);
-    height: 19px;
-    float: right;
-    padding: 19px;
-    position: fixed;
-    /* top: 882px; */
-    /* float: right; */
-    /* left: 117px; */
-    bottom: 0px;
-    /* right: 0px; */
-    margin-left: 250px;
+    font-size:2.2em;
+          background-color: black;
+    width: 100%;
+    height: 50px
 
        
 }
@@ -247,9 +239,15 @@ font-family: cursive;
 }
 
 .wannabuy {
-   background-color: #a2e3ff;
+   background-color: #355664;
     margin-left: 42px;
     font-size: 26px;
+    /* border: 1px; */
+    border-bottom: 1px;
+    border-bottom-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-bottom-style: initial;
 }
 
 .emailaddresshidden{
@@ -257,9 +255,9 @@ font-family: cursive;
 }
 
 .emailaddressshow {
-       display: block;
-    margin-top: -56px;
-    color: #253c46;
+    display: block;
+    margin-top: 12px;
+     color: #253c46;;
 }
 .closeButtonStyle{
    cursor: pointer;
@@ -269,35 +267,28 @@ font-family: cursive;
     top: 0px;
   }
   .skylightimage{
-        width: 47% !important;
-    height: 80% !important;
-    border: 1px solid;
-    margin-top: 82px;
-    margin-left: 39px;
+    width: 42%;
+    height: 80%;
 
   }
 
   .popuptext {
-         width: 45%;
+       width: 43%;
+   
     font-size: 16px;
-    margin-top: 16px;
-    margin-left: 58px;
-    height: 13%;
   
   }
   .header{
-font-size: 17px;
+  font-size: 17px;
     font-family: cursive;
     color: 52878e;
     background-color: white;
     border-bottom-width: inherit;
-    width: 261px;
-    /* padding-bottom: 52px; */
+    width: 250px;
+    padding-bottom: 53px;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 34px;
     margin-right: -5px;
-    height: 56px;
-    margin-top: 16px;
   }
 
   .test {
@@ -333,7 +324,7 @@ Search icon
 #search-text {
      font-family: cursive;
     /* text-align: center; */
-    font-size: 1.2em;
+    font-size: 2.2em;
     /* margin-top: -79px; */
     color: black;
 }
@@ -367,18 +358,18 @@ Search icon
     display: none;
 }
 .buttonbuy {
-      color: white;
+    color: white;
     background-color: #355664;
-    margin-left: 49px;
-    margin-top: -42px;
-    width: 95px;
-    font-size: 23px
+    margin-left: 109px;
+    margin-top: 10px;
+    width: 93px;
+    font-size: 23px;
 }
 
 .icon {
         width: 96px;
     font-size: 28px;
-    margin-top: 7px;
+    margin-top: -16px;
     float: right;
     padding-left: 3px;
     
@@ -410,8 +401,8 @@ Search icon
 }
 
   .headerdesign{
-      background-color: #30373b;
-        height: 46px;
+      background-color: 30373b;
+    height: 46px;
 }
 
 .navpanel{
@@ -429,8 +420,6 @@ Search icon
     width: 248px;
     background-color:white;
     float: left;
-    top: 0px;
-    box-shadow: 0 0 15px 5px rgba(0,0,0,0.15);
 }
 .markup{
     background-color: black;
@@ -439,7 +428,7 @@ Search icon
     margin-bottom: -56px;
     text-align: center;
     font-size: 21px;
-   
+    overflow: hidden;
 }
 .markup p {
     animation: sideleft  15s;
@@ -466,19 +455,17 @@ Search icon
     font-size: 26px;
     line-height: 1.4em;
     text-align: center;
-           height: 96px;
+        height: 64px
 }
 
 .question img {
      display: block;
     float: left;
-    margin-left: 137px;
+    margin-left: 55px;
     width: calc(27.333% - 69px);
-    height: 169px;
-    margin-top: -109px;
-            cursor: pointer;
-                margin-bottom: 154px;
-            
+    height: 200px;
+        margin-top: -109px;
+            cursor: hand;
 
 }
 img, svg {
@@ -488,9 +475,9 @@ img, svg {
 }
 
 .question {
-       margin-left: 160px;
+    margin-left: 60px; 
     width: 92%;
-    width: 100%;
+    width: 99%;
     height: 14%;
     margin-top: 154px;
     clear: both;
@@ -606,9 +593,19 @@ height: 83%;
   .like-leave-active{
     display: none}
 
-    .emaildesign {
-            width: 160px;
-    height: 22px;
-    margin-top: 29px;
-    }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
 

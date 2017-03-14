@@ -90,7 +90,7 @@ class container extends React.Component {
                       <div className ="box">
                          <img src="https://static.pexels.com/photos/27714/pexels-photo-27714.jpg" 
                                onClick={() => this.refs.customDialog.show()}/>
-                           <div className="bidrate">Rate Rs 29</div>
+                           <div className="bidrate">Bidding rate Rs 29</div>
                            <ReactCSSTransitionGroup transitionName="like" 
                            transitionEnterTimeout={500}
                             transitionLeaveTimeout={500}>
@@ -107,7 +107,7 @@ class container extends React.Component {
                                 <div className="popuptext"> 
                                     Description : this is a beautiful flower, it is red in color.this is a beautiful flower, it is red in color
                                 </div>
-                                  <div className="skylightcontent"> Rate Rs 29 <br/>
+                                  <div className="skylightcontent"> Bidding rate Rs 29 <br/>
                                     <button className="wannabuy" id = "buyid"
                                       onClick={(evt) => this.handleclick(evt)}>
                                      Reserve
@@ -115,16 +115,21 @@ class container extends React.Component {
                                    
                                 <div id="emailaddresshidden"  className="emailaddresshidden"> 
                                   
-                                    <input
+                                    <input 
+                                          type="text"
+                                          placeholder="your rate"
+                                          value = {this.state.rate}
+                                          onChange={(evt) =>this.handlechangerate(evt)}
+                                        />
+                                          <input
                                           type ="text"
                                           placeholder="CloudFactory email"
                                           value= {this.state.emailaddress}
-                                          onChange={(evt) =>this.handlechange(evt)} 
-                                          className="emaildesign"
+                                          onChange={(evt) =>this.handlechange(evt)}
                                         /> 
                                       <button className= "buttonbuy"
                                             onClick={(evt) => this.handlebuttonclick(evt)}>
-                                        Buy</button>
+                                        Reserve</button>
                                      
                                       </div>
                                <div id ="validation" className ="hidevalidation">
@@ -153,7 +158,7 @@ class container extends React.Component {
                           <div className ="box">test</div>
                          <div className ="box">test</div>
                            <div className ="box">test</div>
-                         
+                          <div className ="box">tripti</div>
                        
                          
                        
@@ -163,7 +168,7 @@ class container extends React.Component {
                        <div className= "question">
                       <Link to="/Faq"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192"  />  </Link>
                         <Link to = "/Delivery"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" /></Link>
-                   
+                      <Link to ="/Size"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_2_6e362b74-07c6-4616-a95e-da2dce2c1422_800x.gif?v=1479232950" /> </Link>
                     
 
                   </div>

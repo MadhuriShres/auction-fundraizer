@@ -17,6 +17,11 @@ class AuctionItemsController < ApplicationController
     render json: auction_item.update!(update_params)
   end
 
+  def like
+    auction_item = AuctionItem.find_by!(id: params['id'])
+    render json: auction_item.increment!(:likes)
+  end
+
   private
 
   def permitted_params

@@ -13,8 +13,8 @@ class footer extends React.Component {
        </div>
      
         <div className= "icon">  
-         <img src="https://images.seeklogo.net/2016/09/facebook-icon-preview-1.png"  className ="icon"/>
-         
+         <img src="../image/facebook-icon"  className ="icon"/>
+          <img src="../image/youtube.ico" className ="icon" />
         </div>
          
       </div>
