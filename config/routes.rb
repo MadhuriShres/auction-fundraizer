@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     put :like
   end
 
+  resources :emails, only: [:index]
+
   match '/clothes', to: 'home#index', via: :get
   match '/accessories', to: 'home#index', via: :get
   match '/faq', to: 'home#index', via: :get
