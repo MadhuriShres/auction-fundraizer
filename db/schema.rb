@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20170314024744) do
     t.string   "name"
     t.string   "description"
     t.integer  "price"
-    t.boolean  "sold"
+    t.boolean  "sold",        default: false
     t.string   "sold_to"
     t.string   "category"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "likes",       default: 0
   end
 
