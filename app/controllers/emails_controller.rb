@@ -3,6 +3,6 @@
 # Provides created emails
 class EmailsController < ApplicationController
   def index
-    render json: Email.all
+    render json: Email.all.map { |object| object['email'] }
   end
 end
