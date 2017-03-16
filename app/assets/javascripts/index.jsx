@@ -12,11 +12,13 @@ const Routes = () => {
         <Router history={browserHistory}> 
             <Route path = "/" >
                 <IndexRoute component={Home} />
-                 <Route path = "/clothes" component={Home}  />
-                 <Route path = "/accessaries" component={Home}  />
-                <Route path = "/faq" component={Faq}  />
-                <Route path = "/delivery" component={Delivery}  />
-                <Route path = "/size" component={Size}  />
+                 <Route path = "clothes"  component={Home}  />
+                 <Route path = "DecorativeItems"   component={Home}  />
+                  <Route path = "Bags" component={Home}  />
+                   <Route path = "SoftToys" component={Home}  />
+                    <Route path = "faq" component={Faq}  />
+                    <Route path = "delivery" component={Delivery}  />
+                    <Route path = "size" component={Size}  />
 
             </Route>
         </Router>

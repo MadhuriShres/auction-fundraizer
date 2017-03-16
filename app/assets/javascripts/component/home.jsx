@@ -14,7 +14,7 @@ class Home extends React.Component {
           <div className="wrapper">
               
             <div>  <Header /> </div>
-            <div> <Container /> </div> 
+            <div> <Container url={this.props.route} /> </div> 
             <div> <Footer /> </div>
          
 
