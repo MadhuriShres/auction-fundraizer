@@ -13,9 +13,9 @@ const Routes = () => {
             <Route path = "/" >
                 <IndexRoute component={Home} />
                  <Route path = "clothes"  component={Home}  />
-                 <Route path = "DecorativeItems"   component={Home}  />
-                  <Route path = "Bags" component={Home}  />
-                   <Route path = "SoftToys" component={Home}  />
+                 <Route path = "decoration"   component={Home}  />
+                  <Route path = "bags" component={Home}  />
+                   <Route path = "toys" component={Home}  />
                     <Route path = "faq" component={Faq}  />
                     <Route path = "delivery" component={Delivery}  />
                     <Route path = "size" component={Size}  />
