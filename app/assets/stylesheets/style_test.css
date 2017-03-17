@@ -269,12 +269,9 @@ font-family: cursive;
     top: 0px;
   }
   .skylightimage{
-        width: 47% !important;
-    height: 80% !important;
+    width: 100%;
     border: 1px solid;
-    margin-top: 82px;
-    margin-left: 39px;
-
+    max-height: 540px;
   }
 
   .popuptext {
