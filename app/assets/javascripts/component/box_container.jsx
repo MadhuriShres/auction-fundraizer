@@ -57,8 +57,47 @@ class container extends Component {
       );
     }
   }
+   handleShowClick(evt) {
+    document.getElementById("buyid").className = 'buybuttonhide';
+    document.getElementById("emailaddresshidden").className = 'emailaddressshow ';
+  }
+    handlechange(evt) {
+    this.setState({emailaddress:evt.target.value});
+    console.log(this.state.emailaddress);
+  }
 
-  viewDetails(image) {
+  displayErrorMessage () {
+    //document.getElementById("validation").className = 'showvalidation'
+    this.setState({emailaddress:''})
+  }
+
+  handleclicklikes(image) {
+      image.likes+=1;
+      axios.put(`/auction_items/${image.id}/likes`).then(response => {
+        this.setState({images: this.state.images.map((img) => {
+          return img.id === image.id ? image : img;
+        })});
+      });
+    }
+
+
+ 
+    handlebuttonclick(image) {
+       if (!this.state.emailaddress) {
+          this.displayErrorMessage();
+          return;
+        }
+        else if(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/.test(this.state.emailaddress)){
+          axios.put(`/auction_items/${image.id}`).then(response => {
+            console.log('success');
+          });
+        }
+        else {
+          this.displayErrorMessage()
+        }
+    }
+
+ viewDetails(image) {
     console.log(image);
     this.setState({
       selectedImage: image,
@@ -75,6 +114,7 @@ class container extends Component {
             key={image.id}
             image={image}
             viewDetails={this.viewDetails.bind(this)}
+            handleclicklikes ={this.handleclicklikes.bind(this)}
           />
         )
       }
@@ -91,11 +131,12 @@ class container extends Component {
           ref="customDialog"
           className="skylightimg"
         >
-          <DetailView
+          <DetailView 
             image={this.state.selectedImage}
-            handleShopClick={()=> console.log('shopClicked')}
-            handleEmailChange={()=> console.log('emailChanged')}
-            handleButtonClick={()=> console.log('buttonclick')}
+            handleShopClick={()=> this.handleShowClick()}
+            handleEmailChange={(evt)=> this.handlechange(evt)}
+            handleButtonClick={(image)=> this.handlebuttonclick(image)}
+
           />
         </SkyLight>
         <article id="article2">

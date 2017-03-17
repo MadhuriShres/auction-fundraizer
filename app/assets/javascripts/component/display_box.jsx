@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-const DisplayBox = ({image, viewDetails}) =>
+const DisplayBox = ({image, viewDetails,handleclicklikes}) =>
   <div className ="box">
     <img
       src={image.image_url} 
@@ -17,7 +17,7 @@ const DisplayBox = ({image, viewDetails}) =>
     </ReactCSSTransitionGroup>
     <button 
       className="likes"
-      onClick={(evt) => this.handleclicklikes(evt)}
+     onClick={() => handleclicklikes(image)}
     >
       &hearts;
       {image.likes}

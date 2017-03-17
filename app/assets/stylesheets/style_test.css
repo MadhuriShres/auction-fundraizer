@@ -200,17 +200,17 @@ img {
 
 }
 .bidrate{
-    position: absolute;
+      position: absolute;
     transform: rotate(-45deg);
     box-shadow: 0px 5px 10px #888;
     font-family: cursive;
     background: #FFD700;
     padding: 0px 20px;
     font-size: initial;
-    margin-left: -25px;
+    margin-left: -38px;
     color: #30373b;
     float: right;
-    margin-top: 15px;
+    margin-top: -294px;
 }
 .footertext {
        font-family: cursive;
@@ -228,6 +228,7 @@ img {
     bottom: 0px;
     /* right: 0px; */
     margin-left: 250px;
+    color:white;
 
        
 }
