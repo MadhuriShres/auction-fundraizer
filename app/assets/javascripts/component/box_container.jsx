@@ -31,7 +31,7 @@ class container extends Component {
 
   componentDidMount() {
       const path = this.props.category;
-      const url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`;
+      const url = `/auction_items?category=${this.props.category}`;
     axios.get(url)
       .then((response) =>
         this.setState({
@@ -48,7 +48,7 @@ class container extends Component {
     if(this.props.category !== nextProps.category) {
       this.setState({ loading: true });
         const path = this.props.category;
-        const url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${nextProps.category}`;
+        const url = `/auction_items?category=${nextProps.category}`;
       axios.get(url)
       .then((response) =>
         this.setState({
@@ -78,7 +78,14 @@ class container extends Component {
 
     handleclicklikes(image) {
       image.likes+=1;
-      axios.put(`/auction_items/${image.id}/like`).then(response => {
+      axios({
+        method: 'put',
+        url: `/auction_items/${image.id}/like`,
+        headers: {
+            'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
+            'Content-Type': 'application/json',
+          },
+        }).then(response => {
         this.setState({images: this.state.images.map((img) => {
           return img.id === image.id ? image : img;
         })});
