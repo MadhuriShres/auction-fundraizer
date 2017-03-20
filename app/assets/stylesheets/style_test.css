@@ -251,9 +251,21 @@ img {
 }
 
 .wannabuy {
-   background-color: #a2e3ff;
-    margin-left: 42px;
-    font-size: 26px;
+ background-color: #a2e3ff;
+    /* margin-left: 42px; */
+    font-size: 20px;
+    /* padding-top: 1px; */
+    margin-top: 15px;
+    margin-left: 4px;
+    /* color: #a2e3ff; */
+    background-color: white;
+    font-stretch: initial;
+    font-family: cursive;
+    padding: 4px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 11px;
 }
 
 .emailaddresshidden{
@@ -618,5 +630,11 @@ height: 83%;
 }
 
 .loading {
-    background-color: 
+    background-color: red;
+      background :url(https://s-media-cache-ak0.pinimg.com/originals/0c/44/da/0c44dacf1b038014a6f941131c5e8aa2.gif) center no-repeat;
+         height: 50%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding: 190px;
+      
 }

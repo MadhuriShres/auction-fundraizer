@@ -6,13 +6,13 @@ const Header = () =>
   <div>
     <header>
       <div className="headerdesign" />
-      <div className="search">
+      {/*<div className="search">
         <input 
           id="search-text"
           type="text" 
           placeholder="search"
         />
-      </div>
+      </div>*/}
       <div className="navpanel"> 
         <div className='shoplogo'>FundRaiser</div>
         <nav className="clear">
@@ -20,7 +20,7 @@ const Header = () =>
           <Link to={'/clothes'}><button className="header">Clothes</button></Link>
           <Link to={'/decoration'}><button className="header">Decorative Items</button></Link>
           <Link to={'/bags'}><button className="header">Bags</button></Link>
-          <Link to={'/soft-toys'}><button className="header">Soft Toys</button></Link>
+          <Link to={'/toys'}><button className="header">Soft Toys</button></Link>
         </nav>
       </div>
     </header>

@@ -30,7 +30,16 @@ class container extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`)
+      const path = this.props.category;
+      let url;
+      if(path) {
+        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items`
+
+      }
+      else {
+        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`
+      }
+    axios.get(url,)
       .then((response) =>
         this.setState({
           loading: false,
@@ -42,10 +51,20 @@ class container extends Component {
       );
   }
 
+debugger
   componentWillReceiveProps(nextProps) {
     if(this.props.category !== nextProps.category) {
       this.setState({ loading: true });
-      axios.get(`https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${nextProps.category}`)
+        const path = this.props.category;
+      let url;
+      if(path) {
+        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items`
+
+      }
+      else {
+        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`
+      }
+      axios.get(url ,)
       .then((response) =>
         this.setState({
           loading: false,
@@ -71,9 +90,10 @@ class container extends Component {
     this.setState({emailaddress:''})
   }
 
-  handleclicklikes(image) {
+
+    handleclicklikes(image) {
       image.likes+=1;
-      axios.put(`/auction_items/${image.id}/likes`).then(response => {
+      axios.put(`/auction_items/${image.id}/like`).then(response => {
         this.setState({images: this.state.images.map((img) => {
           return img.id === image.id ? image : img;
         })});
@@ -83,12 +103,26 @@ class container extends Component {
 
  
     handlebuttonclick(image) {
+      debugger
        if (!this.state.emailaddress) {
           this.displayErrorMessage();
           return;
         }
         else if(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/.test(this.state.emailaddress)){
-          axios.put(`/auction_items/${image.id}`).then(response => {
+           axios({
+        method: 'put',
+        url: `/auction_items/${image.id}`,
+       headers: {
+          'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
+          'Content-Type': 'application/json',
+        },
+        //   axios.put(`/auction_items/${image.id}`,
+        //   { headers: {
+        //   'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
+        //   'Content-Type': 'application/json',
+        // },}
+           }
+          ).then(response => {
             console.log('success');
           });
         }
@@ -143,7 +177,7 @@ class container extends Component {
           <div className="line" />
             { 
               this.state.loading ? 
-              <div className="loading"> Loading </div> :
+              <div className="loading">  </div> :
               this.renderBox() 
             }
           <div className= "question">

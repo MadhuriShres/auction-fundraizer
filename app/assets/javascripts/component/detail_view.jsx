@@ -25,7 +25,7 @@ const DetailView = (props) =>
           /> 
           <button
             className="buttonbuy"
-            onClick={(evt) => props.handleButtonClick(evt)}
+            onClick={() => props.handleButtonClick(props.image)}
           >
             Buy
           </button>
