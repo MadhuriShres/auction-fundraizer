@@ -4,7 +4,12 @@
 class AuctionItemsController < ApplicationController
   def index
     category = params['category']
-    render json: category.present? ? AuctionItem.where(category: category) : AuctionItem.all
+    auction_items = if category == 'all' || category.blank?
+                      AuctionItem.all
+                    else
+                      AuctionItem.where(category: category)
+                    end
+    render json: auction_items
   end
 
   def show
