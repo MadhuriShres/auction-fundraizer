@@ -7,19 +7,19 @@ const DetailView = (props) =>
     </div>
     <div className="col-xs-6" >
       <div className ="labeling" >
-        ItemName : {props.image.name}<br/>
-        NPR: {props.image.price} <br/>
-        {props.image.sold ? 'Already Sold' : 
+        <div className='display-box-name'>{props.image.name}<br/></div>
+        NPR: {props.image.price} <br/><br/>
+        {props.image.sold ? 'Already Sold' :
          <button
           className="wannabuy"
           id="buyid"
           onClick={(evt) => props.handleShopClick(evt)}>
           Shop
-        </button>  
+        </button>
         }
-       
-        <br/> 
-        <div id="emailaddresshidden" className="emailaddresshidden"> 
+
+        <br/>
+        <div id="emailaddresshidden" className="emailaddresshidden">
           <form>
             <div className="row">
               <div className="col-xs-9">
@@ -27,7 +27,7 @@ const DetailView = (props) =>
                   type="email"
                   placeholder="CloudFactory email"
                   value={props.emailaddress}
-                  onChange={(evt) =>props.handleEmailChange(evt)} 
+                  onChange={(evt) =>props.handleEmailChange(evt)}
                   className="form-control"
                   required
                 />
