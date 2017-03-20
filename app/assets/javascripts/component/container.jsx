@@ -34,6 +34,7 @@ componentDidMount() {
    
   } else{
     url = '/auction_items';
+    console.log(url)
 
   }
  
@@ -85,10 +86,10 @@ componentDidMount() {
       console.log(err);
     });
  }
-
+/* email address */
   handleclick(evt) {
-    document.getElementById("buyid").className = 'buybuttonhide'
-    document.getElementById("emailaddresshidden").className = 'emailaddressshow '
+    // document.getElementById("buyid").className = 'buybuttonhide'
+    // document.getElementById("emailaddresshidden").className = 'emailaddressshow '
     };
 
     handlechange(evt) {
@@ -176,7 +177,8 @@ componentDidMount() {
                                               ItemName : {image.name}<br/>
                                               Rate: {image.price} <br/>
                                               <button className="wannabuy" id = "buyid"
-                                                onClick={(evt) => this.handleclick(evt)}>
+                                                /*onClick={(evt) => this.handleclick(evt)}*/
+                                                >
                                               Shop
                                               </button><br/>
                                             

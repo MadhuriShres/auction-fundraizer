@@ -6,24 +6,20 @@ import Faq from './component/faq.jsx';
 import Delivery from './component/delivery.jsx';
 import Size from './component/size.jsx';
 
-const Routes = () => {
-   
-    return (
-        <Router history={browserHistory}> 
-            <Route path = "/" >
-                <IndexRoute component={Home} />
-                 <Route path = "clothes"  component={Home}  />
-                 <Route path = "DecorativeItems"   component={Home}  />
-                  <Route path = "Bags" component={Home}  />
-                   <Route path = "SoftToys" component={Home}  />
-                    <Route path = "faq" component={Faq}  />
-                    <Route path = "delivery" component={Delivery}  />
-                    <Route path = "size" component={Size}  />
-
-            </Route>
-        </Router>
-    );
-}
-    
+const Routes = () =>
+	(
+		<Router history={browserHistory}> 
+			<Route path = "/" >
+				<IndexRoute component={Home} category="all" />
+				<Route path = "clothes"  component={Home} category="clothes" />
+				<Route path = "decoration" component={Home} category="decoration" />
+				<Route path = "bags" component={Home} category="bags" />
+				<Route path = "soft-toys" component={Home} category="softtoys" />
+				<Route path = "faq" component={Faq} />
+				<Route path = "delivery" component={Delivery} />
+				<Route path = "size" component={Size} />
+			</Route>
+		</Router>
+	);
 
 render(<Routes />, document.getElementById('react-app'));

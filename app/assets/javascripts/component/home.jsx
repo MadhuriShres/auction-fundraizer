@@ -1,28 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import Header from './Header.jsx';
-import Container from './container.jsx';
+import Container from './box_container.jsx';
 import Footer from './footer.jsx';
 
-
-class Home extends React.Component {
-  render() {
-   
-    return (
-      <div>
-        <section id="page">
-          <div className="wrapper">
-              
-            <div>  <Header /> </div>
-            <div> <Container url={this.props.route} /> </div> 
-            <div> <Footer /> </div>
-         
-
-         </div>
-        </section>
-      </div>
-    );
-  }
-}
+const Home = (props) =>
+  <section id="page">
+    <div className="wrapper">
+      <Header />
+      <Container category={props.route.category} />
+      <Footer />
+    </div>
+  </section>;
 
 export default Home;
