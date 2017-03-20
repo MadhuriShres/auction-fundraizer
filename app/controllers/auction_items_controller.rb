@@ -30,6 +30,6 @@ class AuctionItemsController < ApplicationController
   private
 
   def permitted_params
-    params.require(:sold_to)
+    params.slice(:sold_to, :id)
   end
 end
