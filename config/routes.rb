@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   resources :emails, only: [:index]
 
   match '/clothes', to: 'home#index', via: :get
+  match '/accessories', to: 'home#index', via: :get
   match '/decorative_items', to: 'home#index', via: :get
   match '/bags', to: 'home#index', via: :get
-  match '/toys', to: 'home#index', via: :get  
+  match '/toys', to: 'home#index', via: :get
   match '/faq', to: 'home#index', via: :get
   match '/delivery', to: 'home#index', via: :get
   match '/size', to: 'home#index', via: :get
