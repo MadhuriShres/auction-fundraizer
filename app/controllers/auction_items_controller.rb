@@ -17,8 +17,8 @@ class AuctionItemsController < ApplicationController
   end
 
   def update
-    update_params = permitted_params
-    update_params.merge(sold: true) unless [66, 67, 68, 69].include? params['id']
+    update_params = { 'sold_to' => params['sold_to'], 'id' => params['id'] }
+    update_params['sold'] = true unless [66, 67, 68, 69].include? params['id']
     auction_item = AuctionItem.find_by!(id: params['id'])
     updated_auction_item = auction_item.update!(update_params)
     Notifier.item_purchased(auction_item['id'],
@@ -30,11 +30,5 @@ class AuctionItemsController < ApplicationController
   def like
     auction_item = AuctionItem.find_by!(id: params['id'])
     render json: auction_item.increment!(:likes)
-  end
-
-  private
-
-  def permitted_params
-    params.slice(:sold_to, :id)
   end
 end
