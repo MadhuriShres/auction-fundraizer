@@ -4,7 +4,12 @@
 class AuctionItemsController < ApplicationController
   def index
     category = params['category']
-    render json: category.present? ? AuctionItem.where(category: category) : AuctionItem.all
+    auction_items = if category == 'all' || category.blank?
+                      AuctionItem.all
+                    else
+                      AuctionItem.where(category: category)
+                    end
+    render json: auction_items
   end
 
   def show
@@ -12,9 +17,14 @@ class AuctionItemsController < ApplicationController
   end
 
   def update
-    update_params = permitted_params.merge(sold: true)
+    update_params = permitted_params
+    update_params.merge(sold: true) unless [66, 67, 68, 69].include? params['id']
     auction_item = AuctionItem.find_by!(id: params['id'])
-    render json: auction_item.update!(update_params)
+    updated_auction_item = auction_item.update!(update_params)
+    Notifier.item_purchased(auction_item['id'],
+                            auction_item['name'],
+                            auction_item['sold_to'])
+    render json: updated_auction_item
   end
 
   def like
@@ -25,6 +35,6 @@ class AuctionItemsController < ApplicationController
   private
 
   def permitted_params
-    params.require(:sold_to)
+    params.slice(:sold_to, :id)
   end
 end
