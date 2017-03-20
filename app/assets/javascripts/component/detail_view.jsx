@@ -14,7 +14,7 @@ const DetailView = (props) =>
           className="wannabuy"
           id="buyid"
           onClick={(evt) => props.handleShopClick(evt)}>
-          test
+          Shop
         </button>  
         }
        
