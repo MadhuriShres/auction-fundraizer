@@ -105,13 +105,17 @@ class container extends Component {
         url: `/auction_items/${image.id}`,
         data: {
           sold_to: this.state.emailaddress,
+          sold: true
         },
        headers: {
           'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
           'Content-Type': 'application/json',
         },
       }).then(response => {
-            console.log('success');
+            image.sold = true;
+           this.setState({images: this.state.images.map((img) => {
+              return img.id === image.id ? image : img;
+            })});
           });
         }
         else {
@@ -161,6 +165,9 @@ class container extends Component {
 
           />
         </SkyLight>
+         <div className="markup"> 
+                <p>Thanks for your help and support</p>
+              </div>  
         <article id="article2">
           <div className="line" />
             { 
@@ -168,6 +175,7 @@ class container extends Component {
               <div className="loading">  </div> :
               this.renderBox() 
             }
+                <div className="line"></div>
           <div className= "question">
             <Link to="/Faq"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_1_0980809b-3810-497e-8b6a-11564f7dfcd2_800x.gif%3Fv=1479225192" /> </Link>
             <Link to = "/Delivery"><img src="http://cdn.shopify.com/s/files/1/0183/5429/files/gif_3_e80e9f76-7ab4-4181-a096-9c7861cd6156_800x.gif?v=1479232636" /></Link>
