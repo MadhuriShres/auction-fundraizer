@@ -20,7 +20,11 @@ class AuctionItemsController < ApplicationController
     update_params = permitted_params
     update_params.merge(sold: true) unless [66, 67, 68, 69].include? params['id']
     auction_item = AuctionItem.find_by!(id: params['id'])
-    render json: auction_item.update!(update_params)
+    updated_auction_item = auction_item.update!(update_params)
+    Notifier.item_purchased(auction_item['id'],
+                            auction_item['name'],
+                            auction_item['sold_to'])
+    render json: updated_auction_item
   end
 
   def like
