@@ -23,12 +23,12 @@ class AuctionItemsController < ApplicationController
     updated_auction_item = auction_item.update!(update_params)
     Notifier.item_purchased(auction_item['id'],
                             auction_item['name'],
-                            auction_item['sold_to'])
+                            auction_item['sold_to']).deliver
     render json: updated_auction_item
   end
 
   def like
-    auction_item = AuctionItem.find_by!(id: params['id'])
+    auction_item = AuctionItem.find_by!(id: params['auction_item_id'])
     render json: auction_item.increment!(:likes)
   end
 end
