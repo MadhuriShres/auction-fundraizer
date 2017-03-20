@@ -31,15 +31,8 @@ class container extends Component {
 
   componentDidMount() {
       const path = this.props.category;
-      let url;
-      if(path) {
-        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items`
-
-      }
-      else {
-        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`
-      }
-    axios.get(url,)
+      const url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`;
+    axios.get(url)
       .then((response) =>
         this.setState({
           loading: false,
@@ -51,20 +44,12 @@ class container extends Component {
       );
   }
 
-debugger
   componentWillReceiveProps(nextProps) {
     if(this.props.category !== nextProps.category) {
       this.setState({ loading: true });
         const path = this.props.category;
-      let url;
-      if(path) {
-        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items`
-
-      }
-      else {
-        url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${this.props.category}`
-      }
-      axios.get(url ,)
+        const url = `https://crossorigin.me/https://fast-bayou-57937.herokuapp.com/auction_items?category=${nextProps.category}`;
+      axios.get(url)
       .then((response) =>
         this.setState({
           loading: false,
@@ -80,9 +65,9 @@ debugger
     document.getElementById("buyid").className = 'buybuttonhide';
     document.getElementById("emailaddresshidden").className = 'emailaddressshow ';
   }
-    handlechange(evt) {
+  
+  handlechange(evt) {
     this.setState({emailaddress:evt.target.value});
-    console.log(this.state.emailaddress);
   }
 
   displayErrorMessage () {
@@ -103,7 +88,6 @@ debugger
 
  
     handlebuttonclick(image) {
-      debugger
        if (!this.state.emailaddress) {
           this.displayErrorMessage();
           return;
@@ -112,17 +96,14 @@ debugger
            axios({
         method: 'put',
         url: `/auction_items/${image.id}`,
+        data: {
+          sold_to: this.state.emailaddress,
+        },
        headers: {
           'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
           'Content-Type': 'application/json',
         },
-        //   axios.put(`/auction_items/${image.id}`,
-        //   { headers: {
-        //   'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
-        //   'Content-Type': 'application/json',
-        // },}
-           }
-          ).then(response => {
+      }).then(response => {
             console.log('success');
           });
         }
