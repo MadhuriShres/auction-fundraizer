@@ -18,7 +18,7 @@ class AuctionItemsController < ApplicationController
 
   def update
     update_params = { 'sold_to' => params['sold_to'], 'id' => params['id'] }
-    update_params['sold'] = true unless [66, 67, 68, 69].include? params['id']
+    update_params['sold'] = true unless AuctionItem::MADEONORDER.include? params['id']
     auction_item = AuctionItem.find_by!(id: params['id'])
     updated_auction_item = auction_item.update!(update_params)
     Notifier.item_purchased(auction_item['id'],
