@@ -19,9 +19,9 @@ class container extends Component {
     super(props);
     this.state = {
       emailaddress: '',
-      rate: '', 
+      rate: '',
       error: {
-        emailerror: "Please enter valid emailaddress",
+        emailerror: "Please enter valid email address",
       },
       loading: true,
       images: [],
@@ -65,7 +65,7 @@ class container extends Component {
     document.getElementById("buyid").className = 'buybuttonhide';
     document.getElementById("emailaddresshidden").className = 'emailaddressshow ';
   }
-  
+
   handlechange(evt) {
     this.setState({emailaddress:evt.target.value});
   }

@@ -16,13 +16,20 @@ const DisplayBox = ({image, viewDetails,handleclicklikes}) =>
       <span key={image.likes} className="likes-heart">{image.likes}</span>
     </ReactCSSTransitionGroup>
 
-    <button
-      className="likes"
-     onClick={() => handleclicklikes(image)}
-    >
-      &hearts;
-      {image.likes}
-    </button>
+    <div className ="row" align='center'>
+      <div className="col-xs-3">
+        <button
+          className="likes"
+         onClick={() => handleclicklikes(image)}
+        >
+          &hearts;
+          {image.likes}
+        </button>
+      </div>
+      <div className="col-xs-9">
+        <div className='image-name' align='center'>{image.name.substring(0, 35)}</div>
+      </div>
+    </div>
   </div>;
 
 export default DisplayBox;
