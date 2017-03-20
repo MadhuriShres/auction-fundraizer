@@ -667,7 +667,13 @@ height: 83%;
   text-overflow: ellipsis;
 }
 
-.display-box-name {
+.display-box-item-info {
   color: #a9d1d6;
   font-style: italic;
 }
+
+.already-sold {
+  color: red;
+}
+
+

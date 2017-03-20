@@ -7,9 +7,11 @@ const DetailView = (props) =>
     </div>
     <div className="col-xs-6" >
       <div className ="labeling" >
-        <div className='display-box-name'>{props.image.name}<br/></div>
-        NPR: {props.image.price} <br/><br/>
-        {props.image.sold ? 'Already Sold' :
+        <div className='display-box-item-info'>{props.image.name} <br/></div>
+        <div className='display-box-item-info'>
+          NPR {props.image.price} <br/><br/>
+        </div>
+        {props.image.sold ? <div className='already-sold'>Already Sold</div> :
          <button
           className="wannabuy"
           id="buyid"
@@ -42,7 +44,6 @@ const DetailView = (props) =>
               </div>
             </div>
           </form>
-           
         </div>
       </div>
     </div>
