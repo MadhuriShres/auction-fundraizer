@@ -16,19 +16,29 @@ const DetailView = (props) =>
           Shop
         </button><br/>
         <div id="emailaddresshidden" className="emailaddresshidden"> 
-          <input
-            type="text"
-            placeholder="CloudFactory email"
-            value={props.emailaddress}
-            onChange={(evt) =>props.handleEmailChange(evt)} 
-            className="emaildesign"
-          /> 
-          <button
-            className="buttonbuy"
-            onClick={() => props.handleButtonClick(props.image)}
-          >
-            Buy
-          </button>
+          <form>
+            <div className="row">
+              <div className="col-xs-9">
+                <input
+                  type="email"
+                  placeholder="CloudFactory email"
+                  value={props.emailaddress}
+                  onChange={(evt) =>props.handleEmailChange(evt)} 
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="col-xs-2">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => props.handleButtonClick(props.image)}
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+          </form>
+           
         </div>
       </div>
     </div>

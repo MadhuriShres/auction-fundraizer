@@ -14,7 +14,7 @@ const Routes = () =>
 				<Route path = "clothes"  component={Home} category="clothes" />
 				<Route path = "decoration" component={Home} category="decoration" />
 				<Route path = "bags" component={Home} category="bags" />
-				<Route path = "soft-toys" component={Home} category="softtoys" />
+				<Route path = "toys" component={Home} category="toys" />
 				<Route path = "faq" component={Faq} />
 				<Route path = "delivery" component={Delivery} />
 				<Route path = "size" component={Size} />
