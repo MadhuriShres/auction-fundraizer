@@ -7,7 +7,7 @@ const DisplayBox = ({image, viewDetails,handleclicklikes}) =>
       src={image.image_url} 
       onClick={() => viewDetails(image)}
     />
-    <div className="bidrate">Rate {image.price}</div>
+    <div className="bidrate">{image.sold ? 'sold' : `Rate ${image.price}`}</div>
     <ReactCSSTransitionGroup
       transitionName="like" 
       transitionEnterTimeout={500}

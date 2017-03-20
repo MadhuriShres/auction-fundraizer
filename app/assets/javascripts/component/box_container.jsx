@@ -105,13 +105,17 @@ class container extends Component {
         url: `/auction_items/${image.id}`,
         data: {
           sold_to: this.state.emailaddress,
+          sold: true
         },
        headers: {
           'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
           'Content-Type': 'application/json',
         },
       }).then(response => {
-            console.log('success');
+            image.sold = true;
+           this.setState({images: this.state.images.map((img) => {
+              return img.id === image.id ? image : img;
+            })});
           });
         }
         else {
