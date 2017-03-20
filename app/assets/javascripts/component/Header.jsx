@@ -6,15 +6,12 @@ const Header = () =>
   <div>
     <header>
       <div className="headerdesign" />
-      {/*<div className="search">
-        <input 
-          id="search-text"
-          type="text" 
-          placeholder="search"
-        />
-      </div>*/}
+      <div className="search">
+       Skill Training for Rehabilitation Center Members
+      </div>
       <div className="navpanel"> 
-        <div className='shoplogo'>FundRaiser</div>
+          <Link to={'/'}><button className="shoplogo">FundRaiser</button></Link>
+   
         <nav className="clear">
           <Link to={'/'}><button className="header">Home</button></Link>
           <Link to={'/clothes'}><button className="header">Clothes</button></Link>

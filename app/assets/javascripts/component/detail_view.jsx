@@ -5,16 +5,20 @@ const DetailView = (props) =>
     <div className="col-xs-6">
       <img src={props.image.image_url}  className ="skylightimage img-responsive"/>
     </div>
-    <div className="col-xs-6">
-      <div>
+    <div className="col-xs-6" >
+      <div className ="labeling" >
         ItemName : {props.image.name}<br/>
-        Rate: {props.image.price} <br/>
-        <button
+        NPR: {props.image.price} <br/>
+        {props.image.sold ? 'Already Sold' : 
+         <button
           className="wannabuy"
           id="buyid"
           onClick={(evt) => props.handleShopClick(evt)}>
-          Shop
-        </button><br/>
+          test
+        </button>  
+        }
+       
+        <br/> 
         <div id="emailaddresshidden" className="emailaddresshidden"> 
           <form>
             <div className="row">
